@@ -14,18 +14,20 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="Team">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Team</Fragment>
+      <Fragment slot="desc">Meet Our Talented Team </Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Driving Innovation in Model Development
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Welcome to our team! At the forefront of innovation in model development, 
+        we are a dedicated group of experts committed to pushing the boundaries of 
+        data science and artificial intelligence. With diverse backgrounds and a 
+        shared passion for driving meaningful impact, our team brings together a 
+        wealth of experience and expertise to tackle complex challenges in the field. 
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
@@ -48,6 +50,9 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
+              <p class="text-sm text-gray-800">
+                {teamMemberEntry.data.bio}
+              </p>
             </div>
           </div>
         ))
