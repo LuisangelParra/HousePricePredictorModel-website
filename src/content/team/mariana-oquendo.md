@@ -1,6 +1,6 @@
 ---
 draft: false
-name: "Robert Palmer"
+name: "Mariana Oquendo"
 title: "Marketing Engineer"
 avatar: {
     src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?&fit=crop&w=280",
