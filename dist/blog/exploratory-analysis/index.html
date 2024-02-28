@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v3.6.4"><!-- <link rel="preload" as="image" href={src} alt="Hero" /> --><title>Exploratory analysis | Astroship</title><link rel="canonical" href="https://astroship.web3templates.com/blog/exploratory-analysis/"><meta name="description" content="Astroship is a starter website template for Astro built with TailwindCSS."><meta name="robots" content="index, follow"><meta property="og:title" content="Astroship - Starter Template for Astro"><meta property="og:type" content="website"><meta property="og:image" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:url" content="https://astroship.web3templates.com/blog/exploratory-analysis/"><meta property="og:image:url" content="https://astroship.web3templates.com/opengraph.jpg"><meta property="og:image:alt" content="Astroship Homepage Screenshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@web3templates"><meta name="twitter:creator" content="@surjithctly"><link rel="stylesheet" href="/_astro/about.f6740cac.css" /></head> <body> <div class="max-w-screen-xl mx-auto px-5">  <header class="flex flex-col lg:flex-row justify-between items-center my-5">  <div class="flex w-full lg:w-auto items-center justify-between"> <a href="/" class="text-lg"><span class="font-bold text-slate-800">House</span><span class="text-slate-500">price</span> </a> <div class="block lg:hidden"> <button id="astronav-menu" aria-label="Toggle Menu">  <svg fill="currentColor" class="w-4 h-4 text-gray-800" width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"> <title>Toggle Menu</title> <path class="astronav-close-icon astronav-toggle hidden" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"></path> <path class="astronav-open-icon astronav-toggle" fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"></path> </svg>  </button> </div> </div> <nav class="astronav-items astronav-toggle hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">  <ul class="flex flex-col lg:flex-row lg:gap-3"> <li> <a href="/blog" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Blog</span> </a> </li><li> <a href="/team" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Team</span> </a> </li><li> <a href="/404" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Contact</span> </a> </li><li> <a href="/404" class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"> <span> Pricing</span> </a> </li> </ul>  </nav>  <script>(function(){const closeOnClick = false;
+
+["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+  document.addEventListener(event, addListeners);
+});
+
+// Function to clone and replace elements
+function cloneAndReplace(element) {
+  const clone = element.cloneNode(true);
+  element.parentNode.replaceChild(clone, element);
+}
+
+function addListeners() {
+  // Clean up existing listeners
+  const oldMenuButton = document.getElementById("astronav-menu");
+  if (oldMenuButton) {
+    cloneAndReplace(oldMenuButton);
+  }
+
+  const oldDropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  oldDropdownMenus.forEach((menu) => {
+    cloneAndReplace(menu);
+  });
+
+  // Mobile nav toggle
+  const menuButton = document.getElementById("astronav-menu");
+  menuButton && menuButton.addEventListener("click", toggleMobileNav);
+
+  // Dropdown menus
+  const dropdownMenus = document.querySelectorAll(".astronav-dropdown");
+  dropdownMenus.forEach((menu) => {
+    const button = menu.querySelector("button");
+    button &&
+      button.addEventListener("click", (event) =>
+        toggleDropdownMenu(event, menu, dropdownMenus)
+      );
+
+    // Handle Submenu Dropdowns
+    const dropDownSubmenus = menu.querySelectorAll(
+      ".astronav-dropdown-submenu"
+    );
+
+    dropDownSubmenus.forEach((submenu) => {
+      const submenuButton = submenu.querySelector("button");
+      submenuButton &&
+        submenuButton.addEventListener("click", (event) => {
+          event.stopImmediatePropagation();
+          toggleSubmenuDropdown(event, submenu);
+        });
+    });
+  });
+
+  // Clicking away from dropdown will remove the dropdown class
+  document.addEventListener("click", closeAllDropdowns);
+
+  if (closeOnClick) {
+    handleCloseOnClick();
+  }
+}
+
+function toggleMobileNav() {
+  [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+    el.classList.toggle("hidden");
+  });
+}
+
+function toggleDropdownMenu(event, menu, dropdownMenus) {
+  toggleMenu(menu);
+
+  // Close one dropdown when selecting another
+  Array.from(dropdownMenus)
+    .filter((el) => el !== menu && !menu.contains(el))
+    .forEach(closeMenu);
+
+  event.stopPropagation();
+}
+
+function toggleSubmenuDropdown(event, submenu) {
+  event.stopPropagation();
+  toggleMenu(submenu);
+
+  // Close sibling submenus at the same nesting level
+  const siblingSubmenus = submenu
+    .closest(".astronav-dropdown")
+    .querySelectorAll(".astronav-dropdown-submenu");
+  Array.from(siblingSubmenus)
+    .filter((el) => el !== submenu && !submenu.contains(el))
+    .forEach(closeMenu);
+}
+
+function closeAllDropdowns(event) {
+  const dropdownMenus = document.querySelectorAll(".dropdown-toggle");
+  const dropdownParent = document.querySelectorAll(
+    ".astronav-dropdown, .astronav-dropdown-submenu"
+  );
+  const isButtonInsideDropdown = [
+    ...document.querySelectorAll(
+      ".astronav-dropdown button, .astronav-dropdown-submenu button, #astronav-menu"
+    ),
+  ].some((button) => button.contains(event.target));
+  if (!isButtonInsideDropdown) {
+    dropdownMenus.forEach((d) => {
+      // console.log("I ran", d);
+      // if (!d.contains(event.target)) {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.classList.add("hidden");
+      // }
+    });
+    dropdownParent.forEach((d) => {
+      d.classList.remove("open");
+      d.removeAttribute("open");
+      d.setAttribute("aria-expanded", "false");
+    });
+  }
+}
+
+function toggleMenu(menu) {
+  menu.classList.toggle("open");
+  const expanded = menu.getAttribute("aria-expanded") === "true";
+  menu.setAttribute("aria-expanded", expanded ? "false" : "true");
+  menu.hasAttribute("open")
+    ? menu.removeAttribute("open")
+    : menu.setAttribute("open", "");
+
+  const dropdownToggle = menu.querySelector(".dropdown-toggle");
+  const dropdownExpanded = dropdownToggle.getAttribute("aria-expanded");
+  dropdownToggle.classList.toggle("hidden");
+  dropdownToggle.setAttribute(
+    "aria-expanded",
+    dropdownExpanded === "true" ? "false" : "true"
+  );
+}
+
+function closeMenu(menu) {
+  // console.log("closing", menu);
+  menu.classList.remove("open");
+  menu.removeAttribute("open");
+  menu.setAttribute("aria-expanded", "false");
+  const dropdownToggles = menu.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    toggle.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+}
+
+function handleCloseOnClick() {
+  const navMenuItems = document.querySelector(".astronav-items");
+  const navToggle = document.getElementById("astronav-menu");
+  const navLink = navMenuItems && navMenuItems.querySelectorAll("a");
+
+  const MenuIcons = navToggle.querySelectorAll(".astronav-toggle");
+
+  navLink &&
+    navLink.forEach((item) => {
+      item.addEventListener("click", () => {
+        navMenuItems?.classList.add("hidden");
+        MenuIcons.forEach((el) => {
+          el.classList.toggle("hidden");
+        });
+      });
+    });
+}
+})();</script> </header>  </div>  <div class="max-w-screen-xl mx-auto px-5">  <div class="mx-auto max-w-3xl mt-14"> <span class="text-blue-400 uppercase tracking-wider text-sm font-medium"> Article </span> <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight"> Exploratory analysis </h1> <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap"> <span class="text-gray-400"> Emily Roldan </span> <span class="text-gray-400">•</span> <time class="text-gray-400" datetime="2024-01-26T15:30:00.000Z"> Fri Jan 26 2024 </time> <span class="text-gray-400 hidden md:block">•</span> <div class="w-full md:w-auto flex flex-wrap gap-3"> <span class="text-sm text-gray-500">#analysis</span><span class="text-sm text-gray-500">#data</span><span class="text-sm text-gray-500">#charts</span> </div> </div> </div> <div class="mx-auto prose prose-lg mt-6 max-w-3xl"> <p>The housing market is a complex ecosystem influenced by a myriad of factors ranging from property characteristics to community development initiatives. In this article, we delve into the realm of exploratory analysis to uncover hidden insights within housing datasets. By employing various visualization techniques, we aim to shed light on the intricate dynamics of the real estate market, guiding stakeholders in making informed decisions</p>
+<h2 id="exploratory-analysis-approach">Exploratory Analysis Approach:</h2>
+<p>Our exploratory analysis encompasses four key visualizations, each tailored to unveil specific aspects of the housing market:</p>
+<h3 id="1-distribution-of-housing-prices-and-square-footage">1. Distribution of Housing Prices and Square Footage:</h3>
+<p>Histogram analysis of LotArea and SalePrice unveils insights into the distribution of land sizes and property prices within the dataset. By visualizing frequency distributions, trends, outliers, and market dynamics emerge, aiding in market segmentation, price elasticity analysis, and identification of market trends. This analysis enriches strategic decision-making by providing valuable insights into buyer preferences, pricing strategies, and investment opportunities.</p>
+<p><img alt="Alt text"  src="/_astro/histogram.57de241e_2owEIc.webp" width="992" height="490" loading="lazy" decoding="async"></p>
+<h3 id="2-correlation-between-housing-prices-and-property-characteristics">2. Correlation between Housing Prices and Property Characteristics:</h3>
+<p>Scatter plots serve as a powerful tool in understanding the relationship between batch size and sale price. By plotting these variables against each other, we can discern any discernible patterns or correlations. Such insights are invaluable for stakeholders involved in pricing strategies and production decisions, offering a glimpse into the interplay between supply dynamics and market demand.</p>
+<p><img alt="Alt text"  src="/_astro/scatterplot.22cfe441_25YYPx.webp" width="722" height="547" loading="lazy" decoding="async"></p>
+<h3 id="3-time-series-analysis-of-housing-prices">3. Time Series Analysis of Housing Prices:</h3>
+<p>Comparing sale price distributions across different housing types unveils variations in central tendency, spread, and the presence of outliers. Box plots provide a comprehensive snapshot of these distributions, aiding in the identification of market trends and pricing disparities. This analysis assists real estate professionals in gauging the competitive landscape and formulating targeted marketing strategies.</p>
+<p><img alt="Alt text"  src="/_astro/boxplot.1dff3302_NBGij.webp" width="614" height="461" loading="lazy" decoding="async"></p>
+<h3 id="4-comparative-analysis">4. Comparative Analysis:</h3>
+<p>Statistical mean comparison tests or visual representations such as bar charts enable a direct comparison of average sale prices across housing classes or zoning areas. By elucidating these disparities, stakeholders gain valuable insights into market segmentation and investment opportunities. Such comparative analyses empower decision-makers to allocate resources effectively and capitalize on emerging trends.</p>
+<p><img alt="Alt text"  src="/_astro/barplot.c3f8a530_Z1Jvs3o.webp" width="876" height="547" loading="lazy" decoding="async"></p>
+<h3 id="5-time-series-analysis">5. Time Series Analysis:</h3>
+<p>Examining sale price trends over time offers a glimpse into the evolving dynamics of the housing market. Time series analysis techniques such as line charts or moving averages highlight trends, seasonal patterns, and fluctuations in market conditions. This longitudinal perspective equips stakeholders with the foresight needed to navigate market volatility, guiding investment strategies and mitigating risks.</p>
+<p><img alt="Alt text"  src="/_astro/lineplot.5af4659c_ZS28bY.webp" width="877" height="548" loading="lazy" decoding="async"></p>
+<h2 id="conclusion">Conclusion:</h2>
+<p>In conclusion, exploratory analysis serves as a cornerstone in unraveling the complexities of the housing market. By leveraging visualization techniques, stakeholders gain a deeper understanding of market dynamics, enabling informed decision-making and strategic planning. As we continue to delve into the realm of data-driven insights, the potential for innovation and growth within the real estate sector remains boundless.</p> </div> <div class="text-center mt-8"> <a href="/blog" class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition">← Back to Blog</a> </div>  </div>  <footer class="my-20"> <p class="text-center text-sm text-slate-500">
+Copyright © 2024 Astroship. All rights reserved.
+</p> <!--
+    Can we ask you a favor 🙏
+    Please keep this backlink on your website if possible.
+    or Purchase a commercial license from https://web3templates.com
+  --> <p class="text-center text-xs text-slate-500 mt-1">
+Made by <a href="https://web3templates.com" target="_blank" rel="noopener" class="hover:underline">
+Web3Templates
+</a> </p> </footer>  </body> </html>
