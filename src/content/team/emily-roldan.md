@@ -3,7 +3,7 @@ draft: false
 name: "Emily Roldan"
 title: "Senior Director"
 avatar: {
-    src: "EmilyRoldan.jpg",
+    src: "https://github.com/LuisangelParra/HousePricePredictorModel-website/blob/main/src/assets/EmilyRoldan.jpg",
     alt: "Emily Roldan"
 }
 bio: "Emily is a senior director with a passion for building performant and scalable applications. She has experience working with a variety of technologies and languages, including JavaScript, TypeScript, and Python. She is also a strong advocate for open-source software and enjoys contributing to the community."
