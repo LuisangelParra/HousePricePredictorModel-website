@@ -33,6 +33,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
+          
           <div class="group">
             <div class="w-full aspect-square">
               <Picture
