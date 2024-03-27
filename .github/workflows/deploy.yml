@@ -20,9 +20,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
         # with:
