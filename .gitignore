@@ -1,6 +1,5 @@
 # build output
 .output/
-dist/
 .astro
 
 # dependencies
