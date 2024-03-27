@@ -21,7 +21,7 @@ if (isBuild) {
 
 // https://astro.build/config
 export default defineConfig({
-  site: BASE_URL,
+  site: LIVE_URL,
   base: "/HousePricePredictorModel-website",
   integrations: [tailwind(), mdx(), sitemap()],
 });
