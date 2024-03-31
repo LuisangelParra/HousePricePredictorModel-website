@@ -18,7 +18,7 @@ The housing market is a complex ecosystem influenced by a myriad of factors rang
 
 Our exploratory analysis encompasses four key visualizations, each tailored to unveil specific aspects of the housing market:
 
-### 1. Distribution of Housing Prices and Square Footage:
+## 1. Distribution of Housing Prices and Square Footage:
 
 Analyzing the histograms of LotArea (the size of the land) and SalePrice (the price of properties) helps us understand how land sizes and property prices are spread out in the dataset. When we look at these histograms, we can see how often different land sizes and prices occur, notice any patterns or unusual values, and understand what's happening in the real estate market. This information can be really useful for figuring out different groups of buyers, how sensitive prices are to changes, and spotting trends in the market. Overall, this analysis helps us make smarter decisions about things like setting prices, understanding what buyers want, and finding good investment opportunities.
 
