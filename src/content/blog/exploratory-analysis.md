@@ -8,7 +8,7 @@ image: {
 }
 publishDate: "2024-01-26 10:30"
 category: "Article"
-author: "Emily Roldan"
+author: "Emily Roldan asd"
 tags: [analysis, data, charts]
 ---
 
