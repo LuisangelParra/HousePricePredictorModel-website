@@ -26,6 +26,7 @@ Analyzing the histograms of LotArea (the size of the land) and SalePrice (the pr
 
 ### 2. Correlation between Housing Prices and Property Characteristics:
 
+
 Scatter plots are really helpful for seeing how batch size relates to sale price. When we plot these two things together, we can see if there's any clear linear connection between them. This helps people making decisions about pricing and production understand how supply and demand are affecting each other. It's like getting a sneak peek into how changes in production might impact sales and prices.
 
 ![Alt text](../../assets/scatterplot.png)
