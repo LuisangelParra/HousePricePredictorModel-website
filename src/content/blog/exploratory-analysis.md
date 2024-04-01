@@ -12,6 +12,34 @@ author: "Emily Roldan"
 tags: [analysis, data, charts]
 ---
 
+<style>
+        h2 { 
+          font-size: 1.5em;  
+          font-weight: bold;
+          margin-bottom: 1em;
+        }
+
+
+        h3 {
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 1em;
+        }
+
+        p {
+          margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        img {
+            margin: auto;
+        }
+</style>
+
+
 The housing market is a complex ecosystem influenced by a myriad of factors ranging from property characteristics to community development initiatives. In this article, we delve into the realm of exploratory analysis to uncover hidden insights within housing datasets. By employing various visualization techniques, we aim to shed light on the intricate dynamics of the real estate market, guiding stakeholders in making informed decisions
 
 ## Exploratory Analysis Approach:
