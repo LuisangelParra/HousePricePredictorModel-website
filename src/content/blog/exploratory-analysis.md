@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Exploratory analysis"
-snippet: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
+snippet: ""
 image: {
     src: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "data analysis"
@@ -50,3 +50,4 @@ Looking at how sale prices change over time gives us insight into how the housin
 ## Conclusion:
 
 In conclusion, exploratory analysis serves as a cornerstone in unraveling the complexities of the housing market. By leveraging visualization techniques, stakeholders gain a deeper understanding of market dynamics, enabling informed decision-making and strategic planning. As we continue to delve into the realm of data-driven insights, the potential for innovation and growth within the real estate sector remains boundless.
+
