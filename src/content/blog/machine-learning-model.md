@@ -50,7 +50,7 @@ The different variables of the dataset were primarily analyzed, and several filt
 
 A linear regression model has been selected as a starting point due to its simplicity and ease of interpretation. Since the goal is to predict  **Sale Prices**, a linear regression model provides a straightforward way to model the relationship between a property's features and its  **Sale Price**. Additionally, linear regression is easily interpretable, which means we can clearly understand how each feature contributes to the prediction of the **Sale Price**. When it's suspected that the relationship between the predictor variables and the response variable is approximately linear, the linear regression model is a natural choice. Although real relationships may not be strictly linear, the linear regression model can provide a good approximation in many cases.
 
-### **Our linear regression model**
+### Our linear regression model
 ![Alt Text](../../assets/linear-regresion-model.png)
 
 We select these variables to estimate the sale price because they represent key features of a property that are widely recognized to influence its value in the real estate market. 
