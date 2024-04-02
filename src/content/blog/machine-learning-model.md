@@ -35,7 +35,7 @@ tags: [analysis, Linear regression, model]
         }
 
         img {
-            margin: auto;
+            margin: 4em auto;
         }
 </style>
 
@@ -51,11 +51,7 @@ The different variables of the dataset were primarily analyzed, and several filt
 A linear regression model has been selected as a starting point due to its simplicity and ease of interpretation. Since the goal is to predict  **Sale Prices**, a linear regression model provides a straightforward way to model the relationship between a property's features and its  **Sale Price**. Additionally, linear regression is easily interpretable, which means we can clearly understand how each feature contributes to the prediction of the **Sale Price**. When it's suspected that the relationship between the predictor variables and the response variable is approximately linear, the linear regression model is a natural choice. Although real relationships may not be strictly linear, the linear regression model can provide a good approximation in many cases.
 
 ### **Our linear regression model**
-```latex
-\[
-\text{SalePrice} = \theta_0 + \theta_1 \cdot \text{BsmtFinSF1} + \theta_2 \cdot \text{TotalBsmtSF} + \theta_3 \cdot \text{GrLivArea} + \theta_4 \cdot \text{OverallQual} + \theta_5 \cdot \text{GarageCars}
-\]
-```
+![Alt Text](../../assets/linear-regresion-model.png)
 
 We select these variables to estimate the sale price because they represent key features of a property that are widely recognized to influence its value in the real estate market. 
 
@@ -70,24 +66,30 @@ We select these variables to estimate the sale price because they represent key 
 5. **GarageCars:** size of garage in car capacity
 
 
-![Alt Text](../../assets/colums.png)
+![Alt Text](../../assets/columns.png)
 
 By including these variables in our regression model, we aim to capture the influence of these fundamental property characteristics on the sale price. This selection is based on common knowledge and empirical evidence in the real estate industry, suggesting that these factors are significant predictors of housing prices.
+
+**Correlation heatmap:**
+
+The correlation heatmap, as evidenced earlier, is useful for identifying which variables are most correlated with the response variable. Additionally, by understanding the relationship between predictor variables and the response variable, it becomes possible to validate whether the linear regression model is suitable for the given dataset; if predictor variables have low correlation with the response variable, it may indicate that a linear regression model may not be the best option and that another modeling approach might be more appropriate.
+
+In the case of BsmtFinSF1, there is a moderate positive correlation with the response variable SalePrice. However, this correlation suggests that when one variable increases, the other tends to increase, although not very strongly. This indicates that upon conducting a more detailed analysis, we might find that this variable may not have such a significant influence on the response variable.
 
 ![Alt Text](../../assets/correlation.png)
 
 ### Validation methods and employed metrics information
 
 **Validation Method:**
-- Train-Test Split: The dataset is split into two subsets, one for training the model and the other for validation/testing. 
-  - 70% of the data is used for training (`train_size=0.7`), and the remaining 30% is used for testing.
-  - Random state is set to 15 (`random_state=15`) to ensure reproducibility.
+- **·** The dataset is split into two subsets, one for training the model and the other for validation/testing. 
+- **·** 70% of the data is used for training (`train_size=0.7`), and the remaining 30% is used for testing.
+- **·** Random state is set to 15 (`random_state=15`) to ensure reproducibility.
 
 **Metrics Employed:**
-- Model Score: The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
+- The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
 
 **Visualization:**
-- Comparison Plot: A scatter plot with a regression line is generated to visually compare the predicted SalePrice (`y_pred`) against the actual SalePrice (`y_real`). This provides a visual assessment of how well the model predictions align with the actual values.
+- A scatter plot with a regression line is generated to visually compare the predicted SalePrice (`y_pred`) against the actual SalePrice (`y_real`). This provides a visual assessment of how well the model predictions align with the actual values.
 
 By utilizing a train-test split approach and evaluating the model's performance using the coefficient of determination (R^2 score), this code snippet demonstrates a basic validation method and metric employed for assessing the performance of the linear regression model. Additionally, the visualization aids in understanding the model's predictive capability by comparing predicted and actual SalePrice values.
 
