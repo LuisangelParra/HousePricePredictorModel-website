@@ -33,6 +33,16 @@ tags: [analysis, Linear regression, model]
           margin-top: 1em;
         }
 
+        ul {
+          margin-bottom: 1em;
+          margin-top: 1em;
+        }
+
+        ol {
+          margin-bottom: 1em;
+          margin-top: 1em;
+        }
+
         li {
           margin-bottom: 1em;
           margin-top: 1em;
