@@ -41,15 +41,15 @@ tags: [analysis, Linear regression, model]
 
 At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value.
 
-We define a list named inputs containing the following features:
-
-**·	TotalBsmtSF:** Total square footage of the basement area.
-
-**· GrLivArea:** Above-ground living area square footage.
-
-**· OverallQual:** Overall quality grade (categorical variable).
-
-**· GarageCars:** Number of cars the garage can hold (categorical or numerical depending on how it's encoded).
+<div>
+  <p>We define a list named inputs containing the following features:</p>
+  <ul  class="list-disc list-inside">
+    <li><b>TotalBsmtSF:</b> Total square footage of the basement area.</li>
+    <li><b>GrLivArea:</b>  Above-ground living area square footage.</li>
+    <li><b>OverallQual:</b> Overall quality grade (categorical variable).</li>
+    <li><b>GarageCars:</b> Number of cars the garage can hold (categorical or numerical depending on how it's encoded).</li>
+  </ul>
+</div>
 
 These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices.
 
@@ -61,11 +61,9 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 
 ![Alt Text](../../assets/linear-regresion-model.png)
 
-
-
-**Hyperparameters:** we define the following hyperparameters for the MLP model: 
 <div>
-  <ul  class="list-disc">
+  <p><b>Hyperparameters:</b> we define the following hyperparameters for the MLP model:</p>
+  <ul  class="list-disc list-inside">
     <li><b>Hidden layers:</b> Four hidden layers, each containing 10 nodes.</li>
     <li><b>Activation function:</b>  ReLU (Rectified Linear Unit) activation function.</li>
     <li><b>Regularization:</b> Alpha value of 0.05 (L1 regularization parameter).</li>
