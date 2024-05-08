@@ -25,7 +25,7 @@ tags: [analysis, Linear regression, model]
           font-size: 1.2em;
           font-weight: bold;
           margin-bottom: 1em;
-          margin-top: 1em;
+          margin-top: 2em;
         }
 
         p {
@@ -161,8 +161,17 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
   <li><b>Select a "good" model:</b> Choose a model with a high evaluation score (e.g., R-squared) to represent your final model.</li>
 </ul>
 
+## let's take a look at the results!
+
+![Alt Text](../../assets/scoredist.png)
+
+The distribution is characterized by a unimodal shape, which means that there is a single peak that represents the most probable score. The peak is located around 0.72, which indicates that this is the most common score.
+
+The distribution also shows some asymmetry, with a longer tail to the right than to the left. This indicates that there is a higher probability that the scores will be high than low.
+
+
 <div class="flex justify-center mt-10">
-<a href="https://colab.research.google.com/drive/11M6GkYTUHQzPCFlJZEBNw1sCiE7yZdZ6?usp=sharing" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+<a href="https://colab.research.google.com/drive/1AUigWU7IPCbbnkStYdwKUvLUoYH1Ib-f?usp=sharing" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Google Colab
   <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
 </svg>
