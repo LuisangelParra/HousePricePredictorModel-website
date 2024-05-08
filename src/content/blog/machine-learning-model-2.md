@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Machine learning model II"
-snippet: "Model selection in machine learning is crucial for developing effective predictive systems. It involves exploring various algorithms, from linear regressions to more complex models like decision trees or neural networks, with the aim of striking a balance between model complexity and its ability to generalize patterns in the data. Exhaustive testing, cross-validation, and optimization techniques are used to select the model that produces the most accurate and reliable predictions for the sale price."
+snippet: "At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value."
 image: {
     src: "https://images.unsplash.com/photo-1511376777868-611b54f68947?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "data analysis"
@@ -39,10 +39,20 @@ tags: [analysis, Linear regression, model]
         }
 </style>
 
+- At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value.
+
 - We define a list named inputs containing the following features:
-- **·**	TotalBsmtSF: Total square footage of the basement area
-- **·**
-- **·**
+- **·	TotalBsmtSF:** Total square footage of the basement area.
+- **· GrLivArea:** Above-ground living area square footage.
+- **· OverallQual:** Overall quality grade (categorical variable).
+- **· GarageCars:** Number of cars the garage can hold (categorical or numerical depending on how it's encoded).
+
+These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices.
+
+Also, we define a list named output containing a single element: SalePrice. This represents the target variable the MLP model is trying to predict - the selling price of the house.
+
+- **·**	The choice of features can significantly impact the model's performance. Including more relevant features can improve accuracy, but it's also important to avoid overfitting by including too many features. Feature selection techniques can help identify the most important features for the model.
+
 
 - ## Objectives for estimation:
 
