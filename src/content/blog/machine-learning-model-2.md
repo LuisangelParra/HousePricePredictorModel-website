@@ -29,10 +29,12 @@ tags: [analysis, Linear regression, model]
 
         p {
           margin-bottom: 1em;
+          margin-top: 1em;
         }
 
         li {
           margin-bottom: 1em;
+          margin-top: 1em;
         }
 
         img {
