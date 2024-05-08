@@ -55,11 +55,11 @@ These features are chosen because they likely have a significant influence on a 
 
 Also, we define a list named output containing a single element: SalePrice. This represents the target variable the MLP model is trying to predict - the selling price of the house.
 
-![Alt Text](../../assets/linear-regresion-model.png)
+![Alt Text](../../assets/table-input-output.png)
 
 Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type of artificial neural network well-suited for regression problems like predicting real estate prices.
 
-![Alt Text](../../assets/linear-regresion-model.png)
+![Alt Text](../../assets/architecture.png)
 
 ## Hyperparameters:
 
@@ -73,7 +73,9 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
   </ul>
 </div>
 
-```
+## Let's take a look at the code!!!
+
+```python
   scores_ = []
   for k in range(100):
     #Separar los datos en entrenamiento y validación (testing)
