@@ -97,8 +97,8 @@ This code performs a loop that trains and evaluates an MLP model 100 times.
      <li>The loop iterates 100 times (represented by k).</li>
      <li>Inside the loop, the <b>train_test_split</b> function splits the entire data (</b>data</b>) into two sets: 
         <ul  class="list-disc list-inside">
-          <li><b>Training set (Train):</b> This contains 70% of the data (default for test_size=0.3). This set is used to train the MLP model.<li>
-          <li><b>Testing set (Test):</b> This contains the remaining 30% of the data. This set is used to evaluate how well the trained model performs on unseen data.<li>
+          <li><b>Training set (Train):</b> This contains 70% of the data (default for test_size=0.3). This set is used to train the MLP model.</li>
+          <li><b>Testing set (Test):</b> This contains the remaining 30% of the data. This set is used to evaluate how well the trained model performs on unseen data.</li>
         </ul>     
      </li>
      <li>random_state = k+1 is used to shuffle the data differently in each iteration. This helps reduce the impact of the order in which data is presented to the model.</li>
