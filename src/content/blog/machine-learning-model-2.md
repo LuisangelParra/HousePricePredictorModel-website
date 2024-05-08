@@ -31,28 +31,48 @@ tags: [analysis, Linear regression, model]
         }
 
         li {
-            margin-bottom: 1em;
+          margin-bottom: 1em;
         }
 
         img {
-            margin: 4em auto;
+          margin: 4em auto;
         }
 </style>
 
-- At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value.
+At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value.
 
-- We define a list named inputs containing the following features:
-- **·	TotalBsmtSF:** Total square footage of the basement area.
-- **· GrLivArea:** Above-ground living area square footage.
-- **· OverallQual:** Overall quality grade (categorical variable).
-- **· GarageCars:** Number of cars the garage can hold (categorical or numerical depending on how it's encoded).
+We define a list named inputs containing the following features:
+**·	TotalBsmtSF:** Total square footage of the basement area.
+**· GrLivArea:** Above-ground living area square footage.
+**· OverallQual:** Overall quality grade (categorical variable).
+**· GarageCars:** Number of cars the garage can hold (categorical or numerical depending on how it's encoded).
 
 These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices.
 
 Also, we define a list named output containing a single element: SalePrice. This represents the target variable the MLP model is trying to predict - the selling price of the house.
 
-- **·**	The choice of features can significantly impact the model's performance. Including more relevant features can improve accuracy, but it's also important to avoid overfitting by including too many features. Feature selection techniques can help identify the most important features for the model.
+![Alt Text](../../assets/linear-regresion-model.png)
 
+Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type of artificial neural network well-suited for regression problems like predicting real estate prices.
+
+**Hyperparameters:** we define the following hyperparameters for the MLP model: 
+    -   **Hidden layers:** Four hidden layers, each containing 10 nodes.
+    -   **Activation function:** ReLU (Rectified Linear Unit) activation function.
+    -   **Regularization:** Alpha value of 0.05 (L1 regularization parameter).
+    -   **Training: Maximum of 600 iterations.**
+
+
+1.  Primer elemento
+
+2.  Segundo elemento
+
+    1.  Primer sub elemento (incluye dos "tab")
+    2.  Segundo sub elemento (incluye dos "tab")
+
+3.  Tercer elemento
+
+    -   Otro sub elemento no ordenado (incluye dos "tab")
+    -   Otro sub elemento no ordenado (incluye dos "tab")
 
 - ## Objectives for estimation:
 
