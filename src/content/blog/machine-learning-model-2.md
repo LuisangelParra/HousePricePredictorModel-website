@@ -84,7 +84,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
     scores_.append(mlp_.score(Test[inputs],Test[output]))
 ```
 
-This code performs a loop that trains and evaluates an MLP model 100 times.
+<p>This code performs a loop that trains and evaluates an MLP model 100 times.</p>
 
 <ol class="list-decimal list-inside">
   <li><b>Initialization:</b>
@@ -95,78 +95,58 @@ This code performs a loop that trains and evaluates an MLP model 100 times.
   <li><b>Data Splitting (K-Fold Simulation):</b>
     <ul  class="list-disc list-inside ml-4">
      <li>The loop iterates 100 times (represented by k).</li>
-     <li>Inside the loop, the <b>train_test_split</b> function splits the entire data (</b>data</b>) into two sets: 
+     <li>Inside the loop, the <b>train_test_split</b> function splits the entire data (<b>data</b>) into two sets: 
         <ul  class="list-disc list-inside ml-4">
-          <li><b>Training set (Train):</b> This contains 70% of the data (default for test_size=0.3). This set is used to train the MLP model.</li>
+          <li><b>Training set (Train):</b> This contains 70% of the data (default for <b>test_size=0.3</b>). This set is used to train the MLP model.</li>
           <li><b>Testing set (Test):</b> This contains the remaining 30% of the data. This set is used to evaluate how well the trained model performs on unseen data.</li>
         </ul>     
      </li>
-     <li>random_state = k+1 is used to shuffle the data differently in each iteration. This helps reduce the impact of the order in which data is presented to the model.</li>
+     <li><b>random_state = k+1</b>  is used to shuffle the data differently in each iteration. This helps reduce the impact of the order in which data is presented to the model.</li>
+    </ul>
+  </li>
+  <li><b>Model Creation and Training:</b>
+    <ul  class="list-disc list-inside ml-4">
+     <li>An MLP regressor model (<b>mlp_</b>) is created. The model (<b>mlp_</b>) is then trained using the training data (<b>Train[inputs], Train[output]</b>). </li>
+    </ul>
+  </li>
+  <li><b>Model Evaluation:</b>
+    <ul  class="list-disc list-inside ml-4">
+     <li>After training, the model's performance is evaluated on the testing data (<b>Test[inputs], Test[output]</b>). The <b>mlp_.score</b> method used for evaluation might be employing a different metric, possibly the coefficient of determination (R-squared). R-squared ranges from 0 to 1, where a higher value (closer to 1) indicates a better fit between the predicted and actual selling prices.</li>
+    </ul>
+  </li>
+  <li><b>Looping:</b>
+    <ul  class="list-disc list-inside ml-4">
+     <li>The loop iterates 99 more times, repeating steps 2-4 with different data splits due to the <b>random_state</b> variation.</li>
     </ul>
   </li>
   
 </ol>
 
-## Objectives for estimation:
+### Evaluation Metric:
 
-Using the provided data the main objective of using a linear regression model in this context is to accurately predict the sale prices of real estate properties using the data provided in the dataset. This can assist real estate agents, investors, and buyers in having a reasonable estimate of a property's value based on its characteristics. Additionally, by better understanding the relationships between a property's features and its **Sale Price**, we can gain valuable insights into which features are most influential in the **Sale Price** and how to enhance a property's value.
-The different variables of the dataset were primarily analyzed, and several filters were applied to prepare the data before constructing a linear regression model. These filters included selecting only those properties with a normal sales condition, excluding sales between relatives that could be considered atypical. Additionally, the data were restricted to properties with all public utilities and no pool. Priority was also given to including properties with central air conditioning and those sold conventionally (WD). These filters were applied with the aim of improving the quality and relevance of the data, ensuring that the linear regression model captured significant and general relationships between the predictor variables and the response variable, which is the **Sale Price** of the real estate properties.
+<p>The 100 iterations are used to train 100 different MLP models with slightly different random weight initializations. This helps in:</p>
+<ul  class="list-disc list-inside">
+  <li><b>Reducing Overfitting: </b> By training multiple models with different starting points, the model is less likely to overfit to the specific training data and might generalize better to unseen data.</li>
+  <li><b>Improving Generalizability:</b> Training with different weight initializations can explore different regions of the solution space, potentially leading to a more robust model.</li>
+</ul>
 
-### About our initial model selection
+### What the code must be doing:
 
-A linear regression model has been selected as a starting point due to its simplicity and ease of interpretation. Since the goal is to predict **Sale Prices**, a linear regression model provides a straightforward way to model the relationship between a property's features and its **Sale Price**. Additionally, linear regression is easily interpretable, which means we can clearly understand how each feature contributes to the prediction of the **Sale Price**. When it's suspected that the relationship between the predictor variables and the response variable is approximately linear, the linear regression model is a natural choice. Although real relationships may not be strictly linear, the linear regression model can provide a good approximation in many cases.
+<p>The code must be performing the following:</p>
 
-### Our linear regression model
+<ol class="list-decimal list-inside ml-4">
+  <li>Train 100 MLP models, each with the defined hyperparameters, but with different random weight initializations due to <b>random_state = k+1.</b></li>
+  <li>For each model, evaluate its performance on the testing data using <b>mlp_.score</b> (which might be using R-squared or another metric).</li>
+  <li>Store the evaluation scores (e.g., R-squared) in the <b>scores_ list.</b></li>
+</ol>
 
-![Alt Text](../../assets/linear-regresion-model.png)
+### Later Analysis:
 
-We select these variables to estimate the sale price because they represent key features of a property that are widely recognized to influence its value in the real estate market.
-
-1. **BsmtFinSF1:** type 1 finished square feet
-
-2. **TotalBsmtSF:** total square feet of basement area
-
-3. **GrLivArea:** above grade (ground) living area square feet
-
-4. **OverallQual:** Rates the overall material and finish of the house
-
-5. **GarageCars:** size of garage in car capacity
-
-![Alt Text](../../assets/columns.png)
-
-By including these variables in our regression model, we aim to capture the influence of these fundamental property characteristics on the sale price. This selection is based on common knowledge and empirical evidence in the real estate industry, suggesting that these factors are significant predictors of housing prices.
-
-**Correlation heatmap:**
-
-The correlation heatmap, as evidenced earlier, is useful for identifying which variables are most correlated with the response variable. Additionally, by understanding the relationship between predictor variables and the response variable, it becomes possible to validate whether the linear regression model is suitable for the given dataset; if predictor variables have low correlation with the response variable, it may indicate that a linear regression model may not be the best option and that another modeling approach might be more appropriate.
-
-In the case of BsmtFinSF1, there is a moderate positive correlation with the response variable SalePrice. However, this correlation suggests that when one variable increases, the other tends to increase, although not very strongly. This indicates that upon conducting a more detailed analysis, we might find that this variable may not have such a significant influence on the response variable.
-
-![Alt Text](../../assets/correlation.png)
-
-### Validation methods and employed metrics information
-
-**Validation Method:**
-
-- **·** The dataset is split into two subsets, one for training the model and the other for validation/testing.
-- **·** 70% of the data is used for training (`train_size=0.7`), and the remaining 30% is used for testing.
-- **·** Random state is set to 15 (`random_state=15`) to ensure reproducibility.
-
-**Metrics Employed:**
-
-- The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
-
-**Visualization:**
-
-- A scatter plot with a regression line is generated to visually compare the predicted SalePrice (`y_pred`) against the actual SalePrice (`y_real`). This provides a visual assessment of how well the model predictions align with the actual values.
-
-By utilizing a train-test split approach and evaluating the model's performance using the coefficient of determination (R^2 score), this code snippet demonstrates a basic validation method and metric employed for assessing the performance of the linear regression model. Additionally, the visualization aids in understanding the model's predictive capability by comparing predicted and actual SalePrice values.
-
-### Preliminary conclusions derived from current analysis
-
-Based on the obtained R^2 score of 0.8418, our preliminary analysis suggests that the linear regression model provides a robust framework for predicting property sale prices using the selected input features. This high coefficient of determination indicates that approximately 84.18% of the variability in sale prices can be explained by the included predictors, namely BsmtFinSF1, TotalBsmtSF, GrLivArea, OverallQual, and GarageCars. Such a strong performance underscores the significance of these features in determining property values. However, while the model demonstrates promising predictive capability, further examination is warranted to explore potential refinements and enhancements. This could involve assessing additional variables, exploring alternative modeling techniques, or conducting diagnostic assessments to ensure the model's assumptions hold. Overall, our preliminary findings suggest that the linear regression model is a valuable tool for understanding and predicting property sale prices, providing a foundation for further analysis and refinement.
-
-![Alt Text](../../assets/plot.png)
+<p>After the loop completes, we might have 100 evaluation scores in <b>scores_.</b> You could then analyze these scores to:</p>
+<ul  class="list-disc list-inside ml-4"">
+  <li><b>Understand the model's variability:</b> See how much the performance varies across different model initializations.</li>
+  <li><b>Select a "good" model:</b> Choose a model with a high evaluation score (e.g., R-squared) to represent your final model.</li>
+</ul>
 
 <div class="flex justify-center mt-10">
 <a href="https://colab.research.google.com/drive/11M6GkYTUHQzPCFlJZEBNw1sCiE7yZdZ6?usp=sharing" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
