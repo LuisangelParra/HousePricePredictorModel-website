@@ -61,8 +61,10 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 
 ![Alt Text](../../assets/linear-regresion-model.png)
 
+## Hyperparameters:
+
 <div>
-  <p><b>Hyperparameters:</b> we define the following hyperparameters for the MLP model:</p>
+  <p>We define the following hyperparameters for the MLP model:</p>
   <ul  class="list-disc list-inside">
     <li><b>Hidden layers:</b> Four hidden layers, each containing 10 nodes.</li>
     <li><b>Activation function:</b>  ReLU (Rectified Linear Unit) activation function.</li>
@@ -70,6 +72,16 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
     <li><b>Training:</b> Maximum of 600 iterations.</li>
   </ul>
 </div>
+
+```
+  scores_ = []
+  for k in range(100):
+    #Separar los datos en entrenamiento y validación (testing)
+    Train, Test = train_test_split(data, test_size=0.3, random_state = k+1)
+    mlp_ = MLPRegressor(hidden_layer_sizes=(10,10,10,10), activation='relu', alpha = 0.05, max_iter=600)
+    mlp_.fit(Train[inputs], Train[output])
+    scores_.append(mlp_.score(Test[inputs],Test[output]))
+```
 
 
 ## Objectives for estimation:
