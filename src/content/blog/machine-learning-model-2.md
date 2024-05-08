@@ -58,10 +58,10 @@ At the forefront of artificial intelligence, neural networks are constantly rede
 <div>
   <p>We define a list named inputs containing the following features:</p>
   <ul  class="list-disc list-inside">
-    <li><b>TotalBsmtSF:</b> Total square footage of the basement area.</li>
-    <li><b>GrLivArea:</b>  Above-ground living area square footage.</li>
-    <li><b>OverallQual:</b> Overall quality grade (categorical variable).</li>
-    <li><b>GarageCars:</b> Number of cars the garage can hold (categorical or numerical depending on how it's encoded).</li>
+    <li><b>TotalBsmtSF:</b> Total square feet of basement area.</li>
+    <li><b>GrLivArea:</b>  Above grade (ground) living area square feet.</li>
+    <li><b>OverallQual:</b> Rates the overall material and finish of the house.</li>
+    <li><b>GarageCars:</b> Size of garage in car capacity.</li>
   </ul>
 </div>
 
@@ -168,6 +168,44 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 The distribution is characterized by a unimodal shape, which means that there is a single peak that represents the most probable score. The peak is located around 0.72, which indicates that this is the most common score.
 
 The distribution also shows some asymmetry, with a longer tail to the right than to the left. This indicates that there is a higher probability that the scores will be high than low.
+
+<b>Loss Function</b>
+
+![Alt Text](../../assets/lossfunct.png)
+
+<p>The loss function of a neural network is a measure of the error that the network makes when performing a specific task. A low loss function indicates that the network is making minimal error, while a high loss function indicates that the network is making significant error.
+
+The decreasing trend of the neural network's loss function reflects the network's learning and improvement in performance. This means that the network is making fewer and fewer errors as it is trained.</p>
+
+## Lets take a look into the neuronal network model!!
+
+![Alt Text](../../assets/heatmap-ml2.png)
+
+<p>The heatmap represents the strength of each connection between the inputs and the first hidden layer, with warmer colors indicating stronger connections and cooler colors indicating weaker connections.</p>
+
+## Predicted values vs. actual values
+
+![Alt Text](../../assets/comparation.png)
+
+<p>The spread of the points around the line indicates the amount of error in the model's predictions. In this case, the points on the plot are scattered around the line, but they are generally clustered closer to the line than they are to the edges of the plot. This suggests that the model is making reasonably good predictions, but there is still some room for improvement.</p>
+
+![Alt Text](../../assets/comparation2.png)
+
+<ul  class="list-disc list-inside">
+  <li><b>Blue:</b> Predicted values.</li>
+  <li><b>Green:</b> Real values.</li>
+</ul>
+
+Our neural network model achieved an average score of 71%. Compared to the linear regression model that had a score of 84%, the latter clearly had better performance.
+
+## Possible explanations for why the neural network had a lower score:
+
+<p><b>Overfitting:</b> It is possible that the neural network overfitted to the training data, which means that it learned to memorize the data rather than learning the underlying relationships between the variables. This can lead to poor performance on new data that was not seen during training.</p>
+
+<p><b>Lack of data:</b> It is possible that the neural network did not have enough data to train properly. Neural networks need a large amount of data to learn the complex relationships between the variables. If there is not enough data, the neural network will not be able to learn these relationships and will therefore perform poorly.</p>
+
+<p><b>Incorrect network architecture:</b> It is possible that the architecture of the neural network was not suitable for the problem. The architecture of a neural network is important for its performance. If the architecture is not correct, the neural network will not be able to learn the relationships between the variables and will therefore perform poorly.</p>
+
 
 
 <div class="flex justify-center mt-10">
