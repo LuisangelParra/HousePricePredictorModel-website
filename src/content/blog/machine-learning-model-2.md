@@ -61,28 +61,21 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 
 ![Alt Text](../../assets/linear-regresion-model.png)
 
+
+
 **Hyperparameters:** we define the following hyperparameters for the MLP model: 
-    -   **Hidden layers:** Four hidden layers, each containing 10 nodes.
-    -   **Activation function:** ReLU (Rectified Linear Unit) activation function.
-    -   **Regularization:** Alpha value of 0.05 (L1 regularization parameter).
-    -   **Training: Maximum of 600 iterations.**
+
+<ul>
+  <li><b>Hidden layers:</b> Four hidden layers, each containing 10 nodes.</li>
+  <li><b>Activation function:</b>  ReLU (Rectified Linear Unit) activation function.</li>
+  <li><b>Regularization:</b> Alpha value of 0.05 (L1 regularization parameter).</li>
+  <li><b>Training:</b> Maximum of 600 iterations.</li>
+</ul>
 
 
-1.  Primer elemento
+## Objectives for estimation:
 
-2.  Segundo elemento
-
-    1.  Primer sub elemento (incluye dos "tab")
-    2.  Segundo sub elemento (incluye dos "tab")
-
-3.  Tercer elemento
-
-    -   Otro sub elemento no ordenado (incluye dos "tab")
-    -   Otro sub elemento no ordenado (incluye dos "tab")
-
-- ## Objectives for estimation:
-
-- Using the provided data the main objective of using a linear regression model in this context is to accurately predict the sale prices of real estate properties using the data provided in the dataset. This can assist real estate agents, investors, and buyers in having a reasonable estimate of a property's value based on its characteristics. Additionally, by better understanding the relationships between a property's features and its  **Sale Price**, we can gain valuable insights into which features are most influential in the  **Sale Price** and how to enhance a property's value.
+Using the provided data the main objective of using a linear regression model in this context is to accurately predict the sale prices of real estate properties using the data provided in the dataset. This can assist real estate agents, investors, and buyers in having a reasonable estimate of a property's value based on its characteristics. Additionally, by better understanding the relationships between a property's features and its  **Sale Price**, we can gain valuable insights into which features are most influential in the  **Sale Price** and how to enhance a property's value.
 The different variables of the dataset were primarily analyzed, and several filters were applied to prepare the data before constructing a linear regression model. These filters included selecting only those properties with a normal sales condition, excluding sales between relatives that could be considered atypical. Additionally, the data were restricted to properties with all public utilities and no pool. Priority was also given to including properties with central air conditioning and those sold conventionally (WD). These filters were applied with the aim of improving the quality and relevance of the data, ensuring that the linear regression model captured significant and general relationships between the predictor variables and the response variable, which is the  **Sale Price** of the real estate properties.
 
 ### About our initial model selection
