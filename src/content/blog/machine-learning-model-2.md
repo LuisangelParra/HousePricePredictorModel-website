@@ -42,9 +42,13 @@ tags: [analysis, Linear regression, model]
 At the forefront of artificial intelligence, neural networks are constantly redefining what's achievable. Today, we introduce a neural network architecture specifically designed to tackle the complex challenge of predicting house sale prices.  Traditionally, house price prediction relies on statistical models that struggle to capture the intricate relationships between numerous factors influencing market value.
 
 We define a list named inputs containing the following features:
+
 **·	TotalBsmtSF:** Total square footage of the basement area.
+
 **· GrLivArea:** Above-ground living area square footage.
+
 **· OverallQual:** Overall quality grade (categorical variable).
+
 **· GarageCars:** Number of cars the garage can hold (categorical or numerical depending on how it's encoded).
 
 These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices.
@@ -54,6 +58,8 @@ Also, we define a list named output containing a single element: SalePrice. This
 ![Alt Text](../../assets/linear-regresion-model.png)
 
 Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type of artificial neural network well-suited for regression problems like predicting real estate prices.
+
+![Alt Text](../../assets/linear-regresion-model.png)
 
 **Hyperparameters:** we define the following hyperparameters for the MLP model: 
     -   **Hidden layers:** Four hidden layers, each containing 10 nodes.
