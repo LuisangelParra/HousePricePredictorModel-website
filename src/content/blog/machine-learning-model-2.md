@@ -25,6 +25,7 @@ tags: [analysis, Linear regression, model]
           font-size: 1.2em;
           font-weight: bold;
           margin-bottom: 1em;
+          margin-top: 1em;
         }
 
         p {
