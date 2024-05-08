@@ -93,7 +93,7 @@ This code performs a loop that trains and evaluates an MLP model 100 times.
     </ul>
   </li>
   <li><b>Data Splitting (K-Fold Simulation):</b>
-    <ul  class="list-disc list-inside">
+    <ul  class="list-disc list-inside ml-4">
      <li>The loop iterates 100 times (represented by k).</li>
      <li>Inside the loop, the <b>train_test_split</b> function splits the entire data (</b>data</b>) into two sets: 
         <ul  class="list-disc list-inside">
