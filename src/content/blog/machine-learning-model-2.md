@@ -65,7 +65,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 
 **Hyperparameters:** we define the following hyperparameters for the MLP model: 
 <div>
-  <ul>
+  <ul  class="list-disc">
     <li><b>Hidden layers:</b> Four hidden layers, each containing 10 nodes.</li>
     <li><b>Activation function:</b>  ReLU (Rectified Linear Unit) activation function.</li>
     <li><b>Regularization:</b> Alpha value of 0.05 (L1 regularization parameter).</li>
