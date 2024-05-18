@@ -65,9 +65,7 @@ At the forefront of artificial intelligence, neural networks are constantly rede
   </ul>
 </div>
 
-These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices.
-
-Also, we define a list named output containing a single element: SalePrice. This represents the target variable the MLP model is trying to predict - the selling price of the house.
+These features are chosen because they likely have a significant influence on a house's price. For example, larger living area and higher overall quality likely correspond to higher prices. Also, we define a list named output containing a single element: SalePrice. This represents the target variable the MLP model is trying to predict - the selling price of the house.
 
 ![Alt Text](../../assets/table-input-output.png)
 
@@ -103,7 +101,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
      <li>An empty list called <b>scores_</b> is created to store the evaluation scores of each model. </li>
     </ul>
   </li>
-  <li><b>Data Splitting (K-Fold Simulation):</b>
+  <li><b>Data splitting (K-Fold Simulation):</b>
     <ul  class="list-disc list-inside ml-4">
      <li>The loop iterates 100 times (represented by k).</li>
      <li>Inside the loop, the <b>train_test_split</b> function splits the entire data (<b>data</b>) into two sets: 
@@ -112,51 +110,40 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
           <li><b>Testing set (Test):</b> This contains the remaining 30% of the data. This set is used to evaluate how well the trained model performs on unseen data.</li>
         </ul>     
      </li>
-     <li><b>random_state = k+1</b>  is used to shuffle the data differently in each iteration. This helps reduce the impact of the order in which data is presented to the model.</li>
+     <li><b>Random_state = k+1</b>  is used to shuffle the data differently in each iteration. This helps reduce the impact of the order in which data is presented to the model.</li>
     </ul>
   </li>
-  <li><b>Model Creation and Training:</b>
+  <li><b>Model creation and training:</b>
     <ul  class="list-disc list-inside ml-4">
      <li>An MLP regressor model (<b>mlp_</b>) is created. The model (<b>mlp_</b>) is then trained using the training data (<b>Train[inputs], Train[output]</b>). </li>
     </ul>
   </li>
-  <li><b>Model Evaluation:</b>
+  <li><b>Evaluation metric:</b>
     <ul  class="list-disc list-inside ml-4">
-     <li>After training, the model's performance is evaluated on the testing data (<b>Test[inputs], Test[output]</b>). The <b>mlp_.score</b> method used for evaluation might be employing a different metric, possibly the coefficient of determination (R-squared). R-squared ranges from 0 to 1, where a higher value (closer to 1) indicates a better fit between the predicted and actual selling prices.</li>
-    </ul>
-  </li>
-  <li><b>Looping:</b>
-    <ul  class="list-disc list-inside ml-4">
-     <li>The loop iterates 99 more times, repeating steps 2-4 with different data splits due to the <b>random_state</b> variation.</li>
+     <li>After training, the model's performance is evaluated on the testing data. The evaluation metric used might be the coefficient of determination (R-squared), which ranges from 0 to 1. A higher value (closer to 1) indicates a better fit between the predicted and actual selling prices.</li>
     </ul>
   </li>
   
 </ol>
 
-### Evaluation Metric:
-
-<p>The 100 iterations are used to train 100 different MLP models with slightly different random weight initializations. This helps in:</p>
-<ul  class="list-disc list-inside">
-  <li><b>Reducing Overfitting: </b> By training multiple models with different starting points, the model is less likely to overfit to the specific training data and might generalize better to unseen data.</li>
-  <li><b>Improving Generalizability:</b> Training with different weight initializations can explore different regions of the solution space, potentially leading to a more robust model.</li>
-</ul>
-
 ### What the code must be doing...
 
 <p>The code must be performing the following:</p>
-
 <ol class="list-decimal list-inside ml-4">
   <li>Train 100 MLP models, each with the defined hyperparameters, but with different random weight initializations due to <b>random_state = k+1.</b></li>
   <li>For each model, evaluate its performance on the testing data using <b>mlp_.score</b> (which might be using R-squared or another metric).</li>
   <li>Store the evaluation scores (e.g., R-squared) in the <b>scores_ list.</b></li>
 </ol>
 
-### Later Analysis
+### Later analysis
 
-<p>After the loop completes, we might have 100 evaluation scores in <b>scores_.</b> You could then analyze these scores to:</p>
+<p>After the loop completes, we might have 100 evaluation scores in <b>scores_.</b> We could then analyze these scores to:</p>
 <ul  class="list-disc list-inside ml-4"">
   <li><b>Understand the model's variability:</b> See how much the performance varies across different model initializations.</li>
   <li><b>Select a "good" model:</b> Choose a model with a high evaluation score (e.g., R-squared) to represent your final model.</li>
+</ul>
+  <li><b>Reducing overfitting: </b> By training multiple models with different starting points, the model is less likely to overfit to the specific training data and might generalize better to unseen data.</li>
+  <li><b>Improving generalizability:</b> Training with different weight initializations can explore different regions of the solution space, potentially leading to a more robust model.</li>
 </ul>
 
 ## Let's take a look at the results!
