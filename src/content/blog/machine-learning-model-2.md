@@ -141,8 +141,9 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 <ul  class="list-disc list-inside ml-4"">
   <li><b>Understand the model's variability:</b> See how much the performance varies across different model initializations.</li>
   <li><b>Select a "good" model:</b> Choose a model with a high evaluation score (e.g., R-squared) to represent your final model.</li>
-</ul>
+</li>
   <li><b>Reducing overfitting: </b> By training multiple models with different starting points, the model is less likely to overfit to the specific training data and might generalize better to unseen data.</li>
+</li>
   <li><b>Improving generalizability:</b> Training with different weight initializations can explore different regions of the solution space, potentially leading to a more robust model.</li>
 </ul>
 
@@ -154,7 +155,7 @@ The distribution is characterized by a unimodal shape, which means that there is
 
 The distribution also shows some asymmetry, with a longer tail to the right than to the left. This indicates that there is a higher probability that the scores will be high than low.
 
-## Loss Function
+### Loss Function
 
 ![Alt Text](../../assets/lossfunct.png)
 
@@ -162,13 +163,13 @@ The distribution also shows some asymmetry, with a longer tail to the right than
 
 The decreasing trend of the neural network's loss function reflects the network's learning and improvement in performance. This means that the network is making fewer and fewer errors as it is trained.</p>
 
-## Lets take a look into the neuronal network model!!
+### Lets take a look into the neuronal network model!!
 
 ![Alt Text](../../assets/heatmap-ml2.png)
 
 <p>The heatmap represents the strength of each connection between the inputs and the first hidden layer, with warmer colors indicating stronger connections and cooler colors indicating weaker connections.</p>
 
-## Predicted values vs. actual values
+### Predicted values vs. actual values
 
 ![Alt Text](../../assets/comparation.png)
 
@@ -181,9 +182,11 @@ The decreasing trend of the neural network's loss function reflects the network'
   <li><b>Green:</b> Real values.</li>
 </ul>
 
+## Comparative analysis: Linear Regression vs. Neural Networks
+
 Our neural network model achieved an average score of 71%. Compared to the linear regression model that had a score of 84%, the latter clearly had better performance.
 
-## Possible explanations for why the neural network had a lower score:
+### Possible explanations for why the neural network had a lower score:
 
 <p><b>Overfitting:</b> It is possible that the neural network overfitted to the training data, which means that it learned to memorize the data rather than learning the underlying relationships between the variables. This can lead to poor performance on new data that was not seen during training.</p>
 
