@@ -81,8 +81,6 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
 <ul  class="list-disc list-inside">
   <li><b>Hidden layers:</b> Four hidden layers, each containing 10 nodes.</li>
   <li><b>Activation function:</b>  ReLU (Rectified Linear Unit) activation function.</li>
-  <li><b>Regularization:</b> Alpha value of 0.05 (L1 regularization parameter).</li>
-  <li><b>Training:</b> Maximum of 600 iterations.</li>
 </ul>
 
 ## Let's take a look at the code!!!
@@ -143,7 +141,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
   <li><b>Improving Generalizability:</b> Training with different weight initializations can explore different regions of the solution space, potentially leading to a more robust model.</li>
 </ul>
 
-### What the code must be doing:
+### What the code must be doing...
 
 <p>The code must be performing the following:</p>
 
@@ -153,7 +151,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
   <li>Store the evaluation scores (e.g., R-squared) in the <b>scores_ list.</b></li>
 </ol>
 
-### Later Analysis:
+### Later Analysis
 
 <p>After the loop completes, we might have 100 evaluation scores in <b>scores_.</b> You could then analyze these scores to:</p>
 <ul  class="list-disc list-inside ml-4"">
@@ -161,7 +159,7 @@ Multi-Layer Perceptron (MLP) regressor is chosen for this task. MLPs are a type 
   <li><b>Select a "good" model:</b> Choose a model with a high evaluation score (e.g., R-squared) to represent your final model.</li>
 </ul>
 
-## let's take a look at the results!
+## Let's take a look at the results!
 
 ![Alt Text](../../assets/scoredist.png)
 
@@ -169,7 +167,7 @@ The distribution is characterized by a unimodal shape, which means that there is
 
 The distribution also shows some asymmetry, with a longer tail to the right than to the left. This indicates that there is a higher probability that the scores will be high than low.
 
-<b>Loss Function</b>
+#<b>Loss Function</b>
 
 ![Alt Text](../../assets/lossfunct.png)
 
