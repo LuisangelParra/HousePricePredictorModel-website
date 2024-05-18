@@ -44,7 +44,7 @@ The housing market is a complicated system influenced by many factors, such as p
 
 ## Exploratory analysis approach
 
-Our exploratory analysis includes four key visualizations, each designed to reveal specific aspects of the housing market
+Our exploratory analysis includes five key visualizations, each designed to reveal specific aspects of the housing market
 
 ### 1. Distribution of housing prices and square footage:
 
@@ -77,5 +77,5 @@ Looking at how sale prices change over time gives us insight into how the housin
 
 ## Conclusion:
 
-In conclusion, exploratory analysis is essential for understanding the complexities of the housing market. By using visualization techniques, stakeholders can better understand market dynamics, leading to informed decision-making and strategic planning. As we continue to explore insights, the potential for innovation and growth in the real estate sector is limitless.
+In conclusion, exploratory analysis plays a crucial role in understanding the complexities of the housing market. By using visualization techniques, stakeholders can better understand market dynamics, leading to informed decision-making and strategic planning. As we continue to explore insights, the potential for innovation and growth in the real estate sector is limitless.
 
