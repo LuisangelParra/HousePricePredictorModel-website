@@ -167,7 +167,7 @@ The distribution is characterized by a unimodal shape, which means that there is
 
 The distribution also shows some asymmetry, with a longer tail to the right than to the left. This indicates that there is a higher probability that the scores will be high than low.
 
-#<b>Loss Function</b>
+## Loss Function
 
 ![Alt Text](../../assets/lossfunct.png)
 
