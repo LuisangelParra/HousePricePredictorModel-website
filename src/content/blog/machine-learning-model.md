@@ -78,7 +78,7 @@ We select these variables to estimate the sale price because they represent key 
 
 By including these variables in our regression model, we aim to capture the influence of these fundamental property characteristics on the sale price. This selection is based on common knowledge and empirical evidence in the real estate industry, suggesting that these factors are significant predictors of housing prices.
 
-**Correlation heatmap:**
+## Correlation heatmap 
 
 The correlation heatmap, as evidenced earlier, is useful for identifying which variables are most correlated with the response variable. Additionally, by understanding the relationship between predictor variables and the response variable, it becomes possible to validate whether the linear regression model is suitable for the given dataset; if predictor variables have low correlation with the response variable, it may indicate that a linear regression model may not be the best option and that another modeling approach might be more appropriate.
 
@@ -99,8 +99,9 @@ In the case of BsmtFinSF1, there is a moderate positive correlation with the res
 ### Preliminary conclusions derived from current analysis
 
 Based on the obtained R^2 score of 0.8418, our preliminary analysis suggests that the linear regression model provides a robust framework for predicting property sale prices using the selected input features. This high coefficient of determination indicates that approximately 84.18% of the variability in sale prices can be explained by the included predictors, namely BsmtFinSF1, TotalBsmtSF, GrLivArea, OverallQual, and GarageCars. Such a strong performance underscores the significance of these features in determining property values. However, while the model demonstrates promising predictive capability, further examination is warranted to explore potential refinements and enhancements. This could involve assessing additional variables, exploring alternative modeling techniques, or conducting diagnostic assessments to ensure the model's assumptions hold. Overall, our preliminary findings suggest that the linear regression model is a valuable tool for understanding and predicting property sale prices, providing a foundation for further analysis and refinement.
-
+**Predict values vs Real values**
 ![Alt Text](../../assets/plot.png)
+
 <div class="flex justify-center mt-10">
 <a href="https://colab.research.google.com/drive/1iByFQQvMtFCemksTe0-bHszYAgnriGTj?usp=sharing" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Google Colab
