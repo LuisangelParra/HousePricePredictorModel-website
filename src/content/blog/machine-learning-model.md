@@ -43,9 +43,7 @@ tags: [analysis, Linear regression, model]
 
 - ## Objectives for estimation:
 
-The primary goal of utilizing a linear regression model in this context is to accurately predict the sale prices of real estate properties based on the dataset provided. This predictive capability can be highly beneficial for real estate agents, investors, and potential buyers by offering a reasonable estimate of a property's value grounded in its various characteristics.
-
-Moreover, by analyzing the relationships between a property's features and its sale price, valuable insights can be gained into which features have the most significant impact on sale prices. This understanding can help in enhancing a property's value strategically by focusing on the most influential features.
+The primary goal of utilizing a linear regression model in this context is to accurately predict the sale prices of real estate properties based on the dataset provided. This predictive capability can be highly beneficial for real estate agents, investors, and potential buyers by offering a reasonable estimate of a property's value grounded in its various characteristics. Moreover, by analyzing the relationships between a property's features and its sale price, valuable insights can be gained into which features have the most significant impact on sale prices. This understanding can help in enhancing a property's value strategically by focusing on the most influential features.
 
 Before constructing the linear regression model, the dataset was meticulously analyzed and several filters were applied to ensure the data's quality and relevance. These filters included:
 - **·** Selecting only properties with a normal sales condition to exclude atypical sales.
@@ -97,11 +95,6 @@ In the case of BsmtFinSF1, there is a moderate positive correlation with the res
 
 **Metrics Employed:**
 - The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
-
-**Visualization:**
-- A scatter plot with a regression line is generated to visually compare the predicted SalePrice (`y_pred`) against the actual SalePrice (`y_real`). This provides a visual assessment of how well the model predictions align with the actual values.
-
-By utilizing a train-test split approach and evaluating the model's performance using the coefficient of determination (R^2 score), this code snippet demonstrates a basic validation method and metric employed for assessing the performance of the linear regression model. Additionally, the visualization aids in understanding the model's predictive capability by comparing predicted and actual SalePrice values.
 
 ### Preliminary conclusions derived from current analysis
 
