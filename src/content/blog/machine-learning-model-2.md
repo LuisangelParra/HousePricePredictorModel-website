@@ -31,6 +31,7 @@ tags: [analysis, Linear regression, model]
         p {
           margin-bottom: 1em;
           margin-top: 1em;
+          text-align: justify;
         }
 
         ul {
