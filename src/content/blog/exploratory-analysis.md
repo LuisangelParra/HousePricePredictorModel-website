@@ -28,6 +28,7 @@ tags: [analysis, data, charts]
 
         p {
           margin-bottom: 1em;
+          text-align: justify;
         }
 
         li {
@@ -38,7 +39,6 @@ tags: [analysis, data, charts]
             margin: auto;
         }
 </style>
-
 
 The housing market is a complicated system influenced by many factors, such as property features and community projects. In this article, we analyze housing data to uncover hidden insights. By using various visualization tools, we seek to better understand the real estate market and assist people in making informed decisions.
 
