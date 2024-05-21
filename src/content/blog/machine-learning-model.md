@@ -28,6 +28,7 @@ tags: [analysis, Linear regression, model]
 
         p {
           margin-bottom: 1em;
+          text-align: justify;
         }
 
         li {
