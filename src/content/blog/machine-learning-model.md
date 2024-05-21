@@ -42,7 +42,7 @@ tags: [analysis, Linear regression, model]
 
 - Model selection in machine learning is crucial for developing effective predictive systems. It involves exploring various algorithms, from linear regressions to more complex models like decision trees or neural networks, with the aim of striking a balance between model complexity and its ability to generalize patterns in the data. Exhaustive testing, cross-validation, and optimization techniques are used to select the model that produces the most accurate and reliable predictions for the sale price.
 
-- ## Objectives for estimation:
+- ## Objectives for estimation
 
 The primary goal of utilizing a linear regression model in this context is to accurately predict the sale prices of real estate properties based on the dataset provided. This predictive capability can be highly beneficial for real estate agents, investors, and potential buyers by offering a reasonable estimate of a property's value grounded in its various characteristics. Moreover, by analyzing the relationships between a property's features and its sale price, valuable insights can be gained into which features have the most significant impact on sale prices. This understanding can help in enhancing a property's value strategically by focusing on the most influential features.
 
@@ -86,22 +86,23 @@ In the case of BsmtFinSF1, there is a moderate positive correlation with the res
 
 ![Alt Text](../../assets/correlation.png)
 
-## Validation methods and employed metrics information
+## Validation methods and employed metrics
 
-**Validation Method:**
+**Validation Method**
 - **·** The dataset is split into two subsets, one for training the model and the other for validation/testing. 
 - **·** 70% of the data is used for training (`train_size=0.7`), and the remaining 30% is used for testing.
 - **·** Random state is set to 15 (`random_state=15`) to ensure reproducibility.
 
-**Metrics Employed:**
+**Metrics Employed**
 - The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
+
+**Predict values vs Real values**
+![Alt Text](../../assets/plot.png)
 
 ## Preliminary conclusions derived from current analysis
 
 Based on the obtained R^2 score of 0.8418, our preliminary analysis suggests that the linear regression model provides a robust framework for predicting property sale prices using the selected input features. This high coefficient of determination indicates that approximately 84.18% of the variability in sale prices can be explained by the included predictors, namely BsmtFinSF1, TotalBsmtSF, GrLivArea, OverallQual, and GarageCars. Such a strong performance underscores the significance of these features in determining property values. However, while the model demonstrates promising predictive capability, further examination is warranted to explore potential refinements and enhancements. This could involve assessing additional variables, exploring alternative modeling techniques, or conducting diagnostic assessments to ensure the model's assumptions hold. Overall, our preliminary findings suggest that the linear regression model is a valuable tool for understanding and predicting property sale prices, providing a foundation for further analysis and refinement.
 
-### Predict values vs Real values
-![Alt Text](../../assets/plot.png)
 
 <div class="flex justify-center mt-10">
 <a href="https://colab.research.google.com/drive/1iByFQQvMtFCemksTe0-bHszYAgnriGTj?usp=sharing" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
