@@ -55,11 +55,11 @@ Before constructing the linear regression model, the dataset was meticulously an
 
 By applying these filters, the goal was to refine the dataset to include only relevant and high-quality data. This preparation step is crucial for ensuring that the linear regression model accurately captures the significant relationships between the predictor variables (property features) and the response variable (sale price). Consequently, the model is better equipped to provide precise and generalizable predictions about real estate property values.
 
-### About our initial model selection
+## About our initial model selection
 
 A linear regression model has been selected as a starting point due to its simplicity and ease of interpretation. Since the goal is to predict  **Sale Prices**, a linear regression model provides a straightforward way to model the relationship between a property's features and its  **Sale Price**. Additionally, linear regression is easily interpretable, which means we can clearly understand how each feature contributes to the prediction of the **Sale Price**. When it's suspected that the relationship between the predictor variables and the response variable is approximately linear, the linear regression model is a natural choice. Although real relationships may not be strictly linear, the linear regression model can provide a good approximation in many cases.
 
-### Our linear regression model
+## Our linear regression model
 ![Alt Text](../../assets/linear-regresion-model.png)
 We select these variables to estimate the sale price because they represent key features of a property that are widely recognized to influence its value in the real estate market. 
 
@@ -86,7 +86,7 @@ In the case of BsmtFinSF1, there is a moderate positive correlation with the res
 
 ![Alt Text](../../assets/correlation.png)
 
-### Validation methods and employed metrics information
+## Validation methods and employed metrics information
 
 **Validation Method:**
 - **·** The dataset is split into two subsets, one for training the model and the other for validation/testing. 
@@ -96,10 +96,11 @@ In the case of BsmtFinSF1, there is a moderate positive correlation with the res
 **Metrics Employed:**
 - The `score()` method from the `LinearRegression` model is used to calculate the coefficient of determination (R^2 score) on the test data. This score indicates the proportion of the variance in the dependent variable (SalePrice) that is predictable from the independent variables (inputs).
 
-### Preliminary conclusions derived from current analysis
+## Preliminary conclusions derived from current analysis
 
 Based on the obtained R^2 score of 0.8418, our preliminary analysis suggests that the linear regression model provides a robust framework for predicting property sale prices using the selected input features. This high coefficient of determination indicates that approximately 84.18% of the variability in sale prices can be explained by the included predictors, namely BsmtFinSF1, TotalBsmtSF, GrLivArea, OverallQual, and GarageCars. Such a strong performance underscores the significance of these features in determining property values. However, while the model demonstrates promising predictive capability, further examination is warranted to explore potential refinements and enhancements. This could involve assessing additional variables, exploring alternative modeling techniques, or conducting diagnostic assessments to ensure the model's assumptions hold. Overall, our preliminary findings suggest that the linear regression model is a valuable tool for understanding and predicting property sale prices, providing a foundation for further analysis and refinement.
-**Predict values vs Real values**
+
+### Predict values vs Real values
 ![Alt Text](../../assets/plot.png)
 
 <div class="flex justify-center mt-10">
