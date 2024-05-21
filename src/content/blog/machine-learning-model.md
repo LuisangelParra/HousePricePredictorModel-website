@@ -47,11 +47,11 @@ tags: [analysis, Linear regression, model]
 The primary goal of utilizing a linear regression model in this context is to accurately predict the sale prices of real estate properties based on the dataset provided. This predictive capability can be highly beneficial for real estate agents, investors, and potential buyers by offering a reasonable estimate of a property's value grounded in its various characteristics. Moreover, by analyzing the relationships between a property's features and its sale price, valuable insights can be gained into which features have the most significant impact on sale prices. This understanding can help in enhancing a property's value strategically by focusing on the most influential features.
 
 Before constructing the linear regression model, the dataset was meticulously analyzed and several filters were applied to ensure the data's quality and relevance. These filters included:
-- **·** Selecting only properties with a normal sales condition to exclude atypical sales.
-- **·** Excluding sales between relatives, as these transactions might not reflect market trends.
-- **·** Restricting the data to properties with all public utilities and no pool to maintain consistency.
-- **·** Prioritizing properties with central air conditioning, which is a common preference.
-- **·** Including only conventionally sold properties (WD), ensuring that the sales conditions are standard.
+- **SaleCondition:** Normal Sale, exclude outliers such as family sales
+- **Utilities:** All public utilities
+- **PoolArea:** No pool
+- **CentralAir:** Yes
+- **SaleType:** WD = Conventional
 
 By applying these filters, the goal was to refine the dataset to include only relevant and high-quality data. This preparation step is crucial for ensuring that the linear regression model accurately captures the significant relationships between the predictor variables (property features) and the response variable (sale price). Consequently, the model is better equipped to provide precise and generalizable predictions about real estate property values.
 
@@ -61,7 +61,6 @@ A linear regression model has been selected as a starting point due to its simpl
 
 ### Our linear regression model
 ![Alt Text](../../assets/linear-regresion-model.png)
-
 We select these variables to estimate the sale price because they represent key features of a property that are widely recognized to influence its value in the real estate market. 
 
 1. **BsmtFinSF1:** type 1 finished square feet
